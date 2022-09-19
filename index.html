@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-box">
+        <form id="form" class="form">
+            <h2>Register</h2>
+
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" onkeydown="UsernameKey()" placeholder="Enter Username">
+                <span id="uspan" >Error Message</span>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" onkeydown="EmailKey()" placeholder="Enter email">
+                <span id="espan">Error Message</span>
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" onkeydown="PasswordKey()" placeholder="Enter password">
+                <span id="pspan">Error Message</span>
+            </div>
+
+            <div class="form-control">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" onkeydown="Pass2Key()" placeholder="Enter password again">
+                <span id="ppspan">Error Message</span>
+            </div>
+
+            <button type="submit" id="submit">Submit</button>
+            <button class="reset" onclick="resetFORM()">Reset form</button>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="validate.js"></script>
+
+
+</body>
+</html>
+
+
