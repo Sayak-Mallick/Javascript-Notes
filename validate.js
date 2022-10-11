@@ -45,7 +45,7 @@ function checkPassword() {
     if (!isRequired(password)) {
         showError(passwordEl, 'Password cannot be blank.');
     } else if (!isPasswordSecure(password)) {
-        showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters, 1 number, and 1 special character in (!@#$%^&*)');
+        showError(passwordEl, 'Password must has at least 8 characters that include at least 1 lowercase character, 1 uppercase characters and 1 number.');
     } else {
         showSuccess(passwordEl);
         valid = true;
@@ -78,12 +78,12 @@ function isEmailValid(email){
 }
 
 function isPasswordSecure(password) {
-    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
     return re.test(password);
 }
 
-const isRequired = value => value === '' ? false : true;
-const isBetween = (length, min, max) => length < min || length > max ? false : true;
+const isRequired = value => value !== '';
+const isBetween = (length, min, max) => !(length < min || length > max);
 
 
 function showError(input, message) {
