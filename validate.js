@@ -1,4 +1,4 @@
-const usernameEl = document.querySelector('#username');
+const usernameEl = document.querySelector("#username");
 const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
 const confirmPasswordEl = document.querySelector('#confirm-password');
@@ -8,7 +8,7 @@ const form = document.querySelector('#signup');
 function checkUsername() {
 
     let valid = false;
-    const min = 3, max = 25;
+    const min = 3, max = 30;
 
     const username = usernameEl.value.trim();
 
@@ -109,10 +109,27 @@ function showSuccess(input) {
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    if(document.getElementById("username").value === ""){
+        checkUsername();
+    }
+
+    if(document.getElementById("email").value === ""){
+         checkEmail();
+    }
+
+    if(document.getElementById("password").value === ""){
+        checkPassword();
+    }
+
+    if(document.getElementById("confirm-password").value === ""){
+         checkConfirmPassword();
+    }
 });
 
 
-form.addEventListener('input',function (e) {
+
+form.addEventListener('input', function (e) {
     switch (e.target.id) {
         case 'username':
             checkUsername();
