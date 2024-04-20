@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv" class="myClass">1</div>
+    <div class="myClass">2</div>
+    <p class="myClass">3</p>
+</body>
+
+<script>
+    const elementID = document.getElementById("myDiv");
+    console.log(elementID);
+    console.log(elementID.innerHTML);
+
+    const elementClass = document.getElementsByClassName("myClass");
+    console.log(elementClass);
+
+    for(let i = 0; i < elementClass.length; i++){
+        console.log(elementClass[i].innerHTML);
+    }
+
+    const elementaTag = document.getElementsByTagName("div");
+    console.log(elementaTag);
+
+    for(let i = 0; i < elementaTag.length; i++){
+        console.log(elementaTag[i].innerHTML);
+    }
+</script>
+
+</html>
